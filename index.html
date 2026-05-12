@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Grade Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Student Grade Tracker</p>
+        <h1>Track performance with immediate feedback.</h1>
+        <p class="hero-copy">
+          Add students, manage scores, and keep the class average visible at all times.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="student-form" class="student-form" novalidate>
+          <div class="field-group">
+            <label for="student-name">Student Name</label>
+            <input id="student-name" name="studentName" type="text" placeholder="e.g. Steven Oke" />
+          </div>
+
+          <div class="field-group">
+            <label for="student-grade">Grade</label>
+            <input id="student-grade" name="studentGrade" type="number" min="0" max="100" placeholder="0 - 100" />
+          </div>
+
+          <button type="submit" class="primary-button">Add Student</button>
+        </form>
+
+        <p id="form-error" class="form-error" role="alert" aria-live="polite"></p>
+
+        <section class="summary-grid" aria-label="Class summary">
+          <article class="summary-card">
+            <span class="summary-label">Students</span>
+            <strong id="student-count">0</strong>
+          </article>
+          <article class="summary-card accent">
+            <span class="summary-label">Average Grade</span>
+            <strong id="average-grade">0.00</strong>
+          </article>
+        </section>
+
+        <section class="table-card">
+          <div class="table-header">
+            <h2>Student Records</h2>
+            <p>Above-average grades are highlighted.</p>
+          </div>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Grade</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="student-list"></tbody>
+            </table>
+          </div>
+
+          <p id="empty-state" class="empty-state">No students added yet.</p>
+        </section>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
