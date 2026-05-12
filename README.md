@@ -89,4 +89,4 @@ The app includes both optional bonus features: above-average highlighting and lo
 
 ## Author
 
-Submitted as part of the Student Grade Tracker assignment.
+Akanwealth.
